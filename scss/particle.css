@@ -1,0 +1,15 @@
+canvas {
+    display: block;
+    vertical-align: bottom;
+  } /* ---- particles.js container ---- */
+  #particles-js {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    background-image: url("../asset/Variant6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    
+  }
