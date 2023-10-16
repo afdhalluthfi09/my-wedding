@@ -1,0 +1,61 @@
+#particles-js .w-100 {
+  width: 100vw;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#particles-js .w-100 .frame {
+  width: 250px;
+  height: 250px;
+}
+
+.gambar {
+  position: absolute;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: -moz-max-content;
+  height: max-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gambar img {
+  width: 300px;
+  height: 300px;
+}
+.gambar p {
+  padding: 2px 5px;
+  font-size: 15px;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+.gambar .button {
+  display: flex;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  will-change: box-shadow, transform;
+  background: #BA9C6A;
+  box-shadow: 0px 2px 4px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px #BA9C6A;
+  height: 48px;
+  width: 147px;
+  padding: 0 32px;
+  font-size: 18px;
+  border-radius: 6px;
+  color: white;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  justify-content: center;
+  align-items: center;
+}
+.gambar .button:hover {
+  box-shadow: 0px 4px 8px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px #BA9C6A;
+  transform: translateY(-2px);
+}
+.gambar .button:active {
+  box-shadow: inset 0px 3px 7px #BA9C6A;
+  transform: translateY(2px);
+}/*# sourceMappingURL=sectionhome.css.map */

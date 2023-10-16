@@ -1,0 +1,9 @@
+#muqodimah{
+    background: url(../asset/image-wedding.png), lightgray 50% / cover no-repeat;
+    width: 100vw;
+    height: max-content;
+    position: absolute;
+    top: 100%; /* Posisi tepat di bawah .div1 */
+    left: 50%;
+    transform: translateX(-50%);
+}

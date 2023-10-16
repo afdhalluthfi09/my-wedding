@@ -23,8 +23,84 @@
         </button>
     </div>
     <!-- muqodimmah -->
-    <section id="moqudimah">
-        <h4>Saya</h4>
+    <section id="moqudimah" class="px-2 py-3">
+        <h4 class="mt-5">Assalamu'alaikum warahmatullahi wabarakatuh</h4>
+        <div class="verse px-2 py-3 mt-3">
+            <p>وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+            <span class="tanda-kutip">(QS. Ar-Ruum: 30:21)</span>
+        </div>
+        <hr class="right-line">
+        <div class="px-2 py-3 mt-5">
+            <p class="text-center ajakan">
+                Dengan mengharap rahmat dan Ridha Allah Subhanahu wa Ta'ala, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami :
+            </p>
+        </div>
+        <div class="lin-gap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="301" class="align-center-svg"  height="3" viewBox="0 0 301 3" fill="none">
+                <path d="M0 1.5H300.5" stroke="#FE9526" stroke-width="3"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="251" class="align-center-svg"  height="3" viewBox="0 0 251 3" fill="none">
+                <path d="M0 1.5H250.5" stroke="#FE9526" stroke-width="3"/>
+            </svg>
+        </div>
+        <div class="d-flex flex-row justify-content-start putri">
+            <div class="container-grid mt-5">
+                <div class="item1 d-flex flex-row justify-content-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4" height="115" viewBox="0 0 4 115" fill="none">
+                        <path d="M2 0L1.99999 115" stroke="#FE9526" stroke-width="3"/>
+                      </svg>
+                </div>
+                <div class="item2 px-1">Astrie Octasari</div>
+                <div class="item3 px-1">Putri Dari</div>
+                <div class="item4 px-1">Bapak Sopian dan Ibu Syamsiah</div>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center h-10">
+            <div class="end">&</div>
+        </div>
+        <div class="d-flex flex-row justify-content-end putra">
+            <div class="container-grid mt-5">
+                <div class="item2 px-1">Afdhal Luthfi</div>
+                <div class="item3 px-1">Putra Dari</div>
+                <div class="item4 px-1">Bapak Sarbaini (rahumahullah) dan Ibu Misdawati Idrus</div>
+                <div class="item1 d-flex flex-row justify-content-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4" height="115" viewBox="0 0 4 115" fill="none">
+                        <path d="M2 0L1.99999 115" stroke="#FE9526" stroke-width="3"/>
+                      </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- acara -->
+    <section id="acara" class="px-3 py-5">
+        <div class="rectangale mb-3"></div>
+        <div class="continer centerIt">
+            <div>
+              <label class="project-title">Pernikahan</label>
+              <label class="project-name">Astrie Octafiani & Afdhal Luthfi</label></div>
+            <div class="counter">
+              <div class="days">
+                <div class="value">00</div>
+                <span>Days</span>
+              </div>
+          
+              <div class="hours">
+                <div class="value">00</div>
+                <span>Hours</span>
+              </div>
+          
+              <div class="minutes">
+                <div class="value">00</div>
+                <span>Minutes</span>
+              </div>
+          
+              <div class="seconds">
+                <div class="value">00</div>
+                <span>Seconds</span>
+              </div>
+          
+            </div>
+        </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -34,6 +110,39 @@
 
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script type="text/javascript">
+        (function init() {
+            function getTimeRemaining(endtime) {
+                var t = Date.parse(endtime) - Date.parse(new Date());
+                var seconds = Math.floor((t / 1000) % 60);
+                var minutes = Math.floor((t / 1000 / 60) % 60);
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+                };
+            }
+            
+            function initializeClock(endtime){
+            var timeinterval = setInterval(function(){
+                var t = getTimeRemaining(endtime);
+                document.querySelector(".days > .value").innerText=t.days;
+                document.querySelector(".hours > .value").innerText=t.hours;
+                document.querySelector(".minutes > .value").innerText=t.minutes;
+                document.querySelector(".seconds > .value").innerText=t.seconds;
+                if(t.total<=0){
+                clearInterval(timeinterval);
+                }
+            },1000);
+            }
+            var endDate = new Date(2023, 10, 27); 
+            initializeClock(endDate)
+            })()
+    </script>
 </body>
 
 </html>
