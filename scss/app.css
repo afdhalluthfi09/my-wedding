@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Sacramento&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -7,16 +8,6 @@
 
 body {
   display: flex;
-}
-
-#particles-js .w-100 {
-  width: 100vw;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-#particles-js .w-100 .frame {
-  width: 250px;
-  height: 250px;
 }
 
 .gambar {
@@ -247,10 +238,16 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-@media (max-width: 412px) {
+@media only screen and (max-width: 479px) {
   #acara {
-    /* Adjustments for smaller screens */
+    /* CSS khusus untuk layar kecil */
     top: 212%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 991px) {
+  #acara {
+    /* CSS khusus untuk layar medium */
+    top: 183%;
   }
 }
 #acara .rectangale {
@@ -260,6 +257,12 @@ body {
   width: 100%;
   height: 185px;
   border-radius: 15px;
+}
+#acara .floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 #acara .continer {
   background-color: #0a6cf1;
@@ -308,7 +311,7 @@ body {
 #acara .continer .counter .minutes .value,
 #acara .continer .counter .seconds .value {
   display: block;
-  font-size: 36pt;
+  font-size: 28pt;
   width: 100%;
   display: block;
 }
@@ -332,6 +335,163 @@ body {
   opacity: 0.7;
   animation: pink 1s ease-in-out infinite;
 }
+#acara .undangan {
+  position: relative;
+  top: -170px;
+  padding: 5px;
+}
+#acara .undangan h1 {
+  color: #FE9526;
+}
+#acara .undangan .paint-text {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  color: #eef1f6;
+}
+#acara .undangan .paint-text-1 {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  color: #FE9526;
+}
+#acara .message .letter-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+#acara .message .animated-mail {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  transition: 0.4s;
+}
+#acara .message .animated-mail .body {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 100px 200px;
+  border-color: transparent transparent #e95f55 transparent;
+  z-index: 2;
+}
+#acara .message .animated-mail .top-fold {
+  position: absolute;
+  top: 50px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 100px 0 100px;
+  -webkit-transform-origin: 50% 0%;
+  -webkit-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  -moz-transform-origin: 50% 0%;
+  -moz-transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  transform-origin: 50% 0%;
+  transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  border-color: #cf4a43 transparent transparent transparent;
+  z-index: 2;
+}
+#acara .message .animated-mail .back-fold {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 100px;
+  background: #cf4a43;
+  z-index: 0;
+}
+#acara .message .animated-mail .left-fold {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 50px 100px;
+  border-color: transparent transparent transparent #e15349;
+  z-index: 2;
+}
+#acara .message .animated-mail .letter {
+  left: 20px;
+  bottom: 0px;
+  position: absolute;
+  width: 160px;
+  height: 60px;
+  background: white;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.4s 0.2s;
+}
+#acara .message .animated-mail .letter .letter-border {
+  height: 10px;
+  width: 100%;
+  background: repeating-linear-gradient(-45deg, #cb5a5e, #cb5a5e 8px, transparent 8px, transparent 18px);
+}
+#acara .message .animated-mail .letter .letter-title {
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 10px;
+  width: 40%;
+  background: #cb5a5e;
+}
+#acara .message .animated-mail .letter .letter-context {
+  margin-top: 10px;
+  margin-left: 5px;
+  height: 10px;
+  width: 20%;
+  background: #cb5a5e;
+}
+#acara .message .animated-mail .letter .letter-stamp {
+  margin-top: 30px;
+  margin-left: 120px;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  background: #cb5a5e;
+  opacity: 0.3;
+}
+#acara .message .shadow {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  width: 400px;
+  height: 30px;
+  transition: 0.4s;
+  transform: translateX(-50%);
+  -webkit-transition: 0.4s;
+  -webkit-transform: translateX(-50%);
+  -moz-transition: 0.4s;
+  -moz-transform: translateX(-50%);
+  border-radius: 100%;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+#acara .message .letter-image:hover .animated-mail {
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+}
+#acara .message .letter-image:hover .animated-mail .top-fold {
+  transition: transform 0.4s, z-index 0.2s;
+  transform: rotateX(180deg);
+  -webkit-transition: transform 0.4s, z-index 0.2s;
+  -webkit-transform: rotateX(180deg);
+  -moz-transition: transform 0.4s, z-index 0.2s;
+  -moz-transform: rotateX(180deg);
+  z-index: 0;
+}
+#acara .message .letter-image:hover .animated-mail .letter {
+  height: 180px;
+}
+#acara .message .letter-image:hover .shadow {
+  width: 250px;
+}
+#acara .acara-kominfo {
+  height: -moz-max-content;
+  height: max-content;
+  margin-bottom: 5em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
 @keyframes pink {
   0% {
     opacity: 1;
@@ -342,4 +502,132 @@ body {
   100% {
     opacity: 1;
   }
+}
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+.navigation {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 60px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.navigation ul {
+  width: 350px;
+  display: flex;
+}
+.navigation ul li {
+  list-style: none;
+  position: relative;
+  width: 70px;
+  height: 60px;
+  z-index: 2;
+}
+.navigation ul li a {
+  text-decoration: none;
+  color: #555;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.navigation ul li a .icon {
+  position: relative;
+  background: #fff;
+  display: block;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 65px;
+  color: #222327;
+  font-size: 1.5em;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.navigation ul li a .icon:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  border-radius: 50%;
+  filter: blur(5px);
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.15s;
+}
+.navigation ul li:nth-child(1).active ~ .indicator {
+  transform: translatex(0px);
+}
+.navigation ul li:nth-child(2).active ~ .indicator {
+  transform: translatex(70px);
+}
+.navigation ul li:nth-child(3).active ~ .indicator {
+  transform: translatex(140px);
+}
+.navigation ul li:nth-child(4).active ~ .indicator {
+  transform: translatex(210px);
+}
+.navigation ul li:nth-child(5).active ~ .indicator {
+  transform: translatex(280px);
+}
+.navigation ul li.active a .icon {
+  background: var(--clr);
+  color: #fff;
+  transform: translatey(-27px);
+  transition-delay: 0.25s;
+}
+.navigation ul li.active a .icon:before {
+  opacity: 0.5;
+  transition-delay: 0.25s;
+}
+
+.indicator {
+  position: absolute;
+  top: -35px;
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 0.5s;
+}
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -27.5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 15px 18px #fff;
+}
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -27.5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: -15px 18px #fff;
 }/*# sourceMappingURL=app.css.map */
